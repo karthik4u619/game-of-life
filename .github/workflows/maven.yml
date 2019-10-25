@@ -3,7 +3,7 @@ name: Java CI
 on: [push]
 
 jobs:
-  build and publish:
+  build-and-publish:
 
     runs-on: ubuntu-latest
 
