@@ -6,7 +6,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag gameoflife:v1:$(date +%s)
+      run: docker build . --file Dockerfile -t gameoflife:v1:$(date +%s)
     - name: Publish to Registry
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
