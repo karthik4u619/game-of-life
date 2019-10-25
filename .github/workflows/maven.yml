@@ -3,7 +3,7 @@ name: Java CI
 on: [push]
 
 jobs:
-  build:
+  build and publish:
 
     runs-on: ubuntu-latest
 
@@ -16,7 +16,7 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: docker build
-      uses: actions/docker/cli@v1
+      uses: actions/docker/cli@master
       with:
         args: build -t karthik4u619/gameoflife .
     - name: docker login
