@@ -16,16 +16,16 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: docker build
-        uses: actions/docker/cli
-        with:
-          args: build -t karthik4u619/gameoflife .
-      - name: docker login
-        uses: actions/docker/login@master
-        env:
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-      - name: docker push
-        uses: actions/docker/cli@master
-        with:
-          args: push karthik4u619/gameoflife
+      uses: actions/docker/cli@v1
+      with:
+        args: build -t karthik4u619/gameoflife .
+    - name: docker login
+      uses: actions/docker/login@master
+      env:
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+    - name: docker push
+      uses: actions/docker/cli@master
+      with:
+        args: push karthik4u619/gameoflife
       
