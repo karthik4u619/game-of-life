@@ -16,7 +16,7 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: docker build
-        uses: actions/docker/cli@master
+        uses: actions/docker/cli
         with:
           args: build -t karthik4u619/gameoflife .
       - name: docker login
